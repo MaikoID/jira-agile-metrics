@@ -5,7 +5,10 @@ import logging
 
 from jira import JIRA
 
-from .config import config_to_options, CALCULATORS, ConfigError
+from .config import CALCULATORS
+from .config import ConfigError
+from .config import config_to_options
+
 from .webapp.app import app as webapp
 from .querymanager import QueryManager
 from .calculator import run_calculators
@@ -106,7 +109,6 @@ def main():
         run_server(parser, args)
     else:
         run_command_line(parser, args)
-
 
 def run_server(parser, args):
     host = None

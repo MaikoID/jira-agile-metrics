@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.venv
+output/*
 
 # C extensions
 *.so
@@ -92,3 +94,4 @@ ENV/
 
 # Debug outputs that should not be committed
 progress*.html
+config_cas.yml

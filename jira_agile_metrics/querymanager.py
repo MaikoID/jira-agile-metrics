@@ -238,5 +238,6 @@ class QueryManager(object):
         issues = self.jira.search_issues(
             jql, expand=expand, maxResults=max_results
         )
+
         logger.info("Fetched %d issues", len(issues))
         return issues

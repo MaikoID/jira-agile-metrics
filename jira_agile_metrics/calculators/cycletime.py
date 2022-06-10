@@ -109,7 +109,7 @@ class CycleTimeCalculator(Calculator):
                     output_file,
                     columns=columns,
                     header=header,
-                    date_format="%Y-%m-%d",
+                    date_format="%d/%m/%y %H:%M",
                     index=False,
                 )
 
@@ -230,7 +230,7 @@ def calculate_cycle_times(
 
                     # Keep the first time we entered a step
                     if item[snapshot_cycle_step_name] is None:
-                        item[snapshot_cycle_step_name] = snapshot.date.date()
+                        item[snapshot_cycle_step_name] = snapshot.date.replace(tzinfo=None)
 
                     # Wipe any subsequent dates,
                     # in case this was a move backwards
